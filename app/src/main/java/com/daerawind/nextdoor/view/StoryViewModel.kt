@@ -18,7 +18,8 @@ class StoryViewModel(private val storyRepository: StoryRepository) : ViewModel()
     private var _errorLiveData = MutableLiveData<String>()
     val errorLiveData: LiveData<String> get() = _errorLiveData
 
-    fun getStories(page: String) = viewModelScope.launch {
+    // get page 1 by default
+    fun getStories(page: String = "1") = viewModelScope.launch {
         when (val result = storyRepository.getStories(page)) {
             is Result.Success -> {
                 Log.d("StoryViewModel", "Got data")

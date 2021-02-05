@@ -46,7 +46,7 @@ class FirstFragment : Fragment() {
             Snackbar.make(view, it, Snackbar.LENGTH_LONG).show()
         }
 
-        storyViewModel.getStories("1")
+        storyViewModel.getStories()
 
         // TODO: pagination
         // Add a scroll listener for recyclerview
